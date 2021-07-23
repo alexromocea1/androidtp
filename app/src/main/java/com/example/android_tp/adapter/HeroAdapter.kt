@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_tp.databinding.HeroItemBinding
 import com.example.android_tp.model.HeroResult
 
-class HeroAdapter : RecyclerView.Adapter<HeroAdapter.HeroViewHolder>() {
+class HeroAdapter ( val onHeroSelected : (hero : HeroResult) -> Unit ) : RecyclerView.Adapter<HeroAdapter.HeroViewHolder>() {
 
     private val heroes = mutableListOf<HeroResult>()
 
@@ -28,12 +28,17 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.HeroViewHolder>() {
 
     override fun onBindViewHolder(holder: HeroViewHolder, position: Int) {
         holder.bind(heroes[position])
+
     }
 
     inner class HeroViewHolder(private val binding: HeroItemBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bind(plant: HeroResult){
-            binding.hero = plant
+        fun bind(hero: HeroResult) {
+            binding.hero = hero
+
+            binding.root.setOnClickListener {
+            onHeroSelected(hero)
+        }
 
         }
 
