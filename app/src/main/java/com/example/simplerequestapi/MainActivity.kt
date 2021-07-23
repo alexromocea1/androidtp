@@ -3,6 +3,7 @@ package com.example.simplerequestapi
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,19 +23,33 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this);
 
-        var adapter = HeroAdapter()
+        var adapter = HeroAdapter {}
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getPost()
-        viewModel.myResponse.observe(this, Observer { response ->
-            Log.d("Response", response.results.toString())
 
-        })
+        var results : List<HeroResult> = listOf()
 
-
-
+        viewModel = ViewModelProvider(this,viewModelFactory).
+        get(MainViewModel::class.java)
 
         recyclerView.adapter = adapter
+
+        var searchBar : SearchView = findViewById(R.id.searchView)
+
+        searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String): Boolean {
+                if(newText != "")viewModel.getPost(newText)
+                return false
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+        })
+
+        viewModel.myResponse.observe(this, Observer { response ->
+            adapter.updateList(response.results)
+
+        })
     }
 }

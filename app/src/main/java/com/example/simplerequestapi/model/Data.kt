@@ -7,7 +7,7 @@ data class Data(
     @SerializedName("response")
     val response: String,
     @SerializedName("results")
-    val results: List<Result>,
+    val results: List<HeroResult>,
     @SerializedName("results-for")
     val resultsFor: String
 )
