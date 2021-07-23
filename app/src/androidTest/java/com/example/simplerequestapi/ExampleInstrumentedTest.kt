@@ -1,4 +1,4 @@
-package com.example.android_tp
+package com.example.simplerequestapi
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

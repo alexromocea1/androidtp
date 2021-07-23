@@ -1,4 +1,4 @@
-package com.example.android_tp
+package com.example.simplerequestapi
 
 import org.junit.Test
 

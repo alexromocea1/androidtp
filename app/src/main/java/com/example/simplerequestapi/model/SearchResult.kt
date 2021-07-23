@@ -1,4 +1,4 @@
-package com.example.android_tp.model
+package com.example.simplerequestapi.model
 
 import com.google.gson.annotations.SerializedName
 

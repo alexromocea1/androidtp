@@ -1,4 +1,4 @@
-package com.example.android_tp.model
+package com.example.simplerequestapi.model
 
 data class HeroResult(
     val id: String,
