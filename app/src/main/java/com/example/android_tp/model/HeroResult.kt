@@ -1,8 +1,8 @@
-package com.example.test.connection.model
+package com.example.android_tp.model
 
-data class Result(
+data class HeroResult(
     val id: String,
     val name: String,
     val powerstats: Powerstats,
 
-)
+    )

@@ -1,9 +1,9 @@
-package com.example.test.connection.model
+package com.example.android_tp.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Hero(
+data class SearchResult(
     val response: String,
-    val results: List<Result>,
+    val results: List<HeroResult>,
     @SerializedName("results-for")val resultsFor: String
 )

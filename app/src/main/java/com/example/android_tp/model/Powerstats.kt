@@ -1,4 +1,4 @@
-package com.example.test.connection.model
+package com.example.android_tp.model
 
 data class Powerstats(
     val combat: String,
