@@ -6,7 +6,7 @@
     <data>
         <variable
             name="hero"
-            type="com.example.android_tp.model.HeroResult" />
+            type="com.example.simplerequestapi.model.HeroResult" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

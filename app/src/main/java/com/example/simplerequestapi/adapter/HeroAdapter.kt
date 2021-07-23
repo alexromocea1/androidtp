@@ -1,10 +1,10 @@
-package com.example.android_tp.adapter
+package com.example.simplerequestapi.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android_tp.databinding.HeroItemBinding
-import com.example.android_tp.model.HeroResult
+import com.example.simplerequestapi.databinding.HeroItemBinding
+import com.example.simplerequestapi.model.HeroResult
 
 class HeroAdapter : RecyclerView.Adapter<HeroAdapter.HeroViewHolder>() {
 
