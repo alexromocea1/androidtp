@@ -20,6 +20,7 @@
             android:layout_height="45dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            imageUrl="@{hero.image.url}"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
