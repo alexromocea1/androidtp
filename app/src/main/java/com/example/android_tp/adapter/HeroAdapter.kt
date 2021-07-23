@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_tp.databinding.HeroItemBinding
 import com.example.android_tp.model.HeroResult
 
-class adapter : RecyclerView.Adapter<adapter.HeroViewHolder>() {
+class HeroAdapter : RecyclerView.Adapter<HeroAdapter.HeroViewHolder>() {
 
     private val heroes = mutableListOf<HeroResult>()
 
